@@ -65,7 +65,7 @@ public class GUI_ejercicio extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				alumnos.add(textField.getText());
-				JOptionPane.showMessageDialog(null, "Alumno agregado");
+				
 			}
 		});
 		btnNewButton.setBounds(44, 122, 85, 21);
