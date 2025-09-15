@@ -1,19 +1,24 @@
 package Array_List_Hazel__Ian;
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_ejercicio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
+	ArrayList<String> alumnos = new ArrayList<>();
 
 	/**
 	 * Launch the application.
@@ -36,7 +41,7 @@ public class GUI_ejercicio extends JFrame {
 	 */
 	public GUI_ejercicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 579, 364);
+		setBounds(100, 100, 349, 223);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -57,6 +62,12 @@ public class GUI_ejercicio extends JFrame {
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Agregar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alumnos.add(textField.getText());
+				JOptionPane.showMessageDialog(null, "Alumno agregado");
+			}
+		});
 		btnNewButton.setBounds(44, 122, 85, 21);
 		contentPane.add(btnNewButton);
 		
